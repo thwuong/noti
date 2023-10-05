@@ -24,6 +24,11 @@ app.post("/subscribe", (req, res) => {
 app.get("/register", (req, res) => {
     res.send(vapidKeys.publicKey);
 });
+
+app.get("/", (req, res) => {
+    res.sendFile("./index.html", { root: "./" });
+});
+
 app.use(require("express-static")("./"));
 
 app.listen(3000, (req, res) => {
