@@ -21,7 +21,6 @@ async function run() {
     console.log("Registering service worker");
     const registration = await navigator.serviceWorker.register("/worker.js", { scope: "/" });
     console.log("Registered service worker");
-
     const response = await fetch("./register");
     const publicVapidKey = await response.text();
 
